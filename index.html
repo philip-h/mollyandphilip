@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molly &amp; Philip 2023</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1/assets/css/atcb.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1"
+      async
+      defer
+    ></script>
+    <script src="/js/nav.js" defer></script>
+    <script src="/js/atc.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container flex">
+        <div>
+          <a href="#">
+            <img src="/imgs/mollip.svg" alt="MP" class="logo" />
+          </a>
+        </div>
+        <button
+          class="mobile-nav-toggle"
+          aria-controls="navbar"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Menu</span>
+        </button>
+        <nav>
+          <ul id="navbar" class="navbar flex" data-visible="false">
+            <li>
+              <a href="#" class="flex mobile-logo">
+                <img src="/imgs/mollip.svg" class="logo" alt="MP" />
+              </a>
+            </li>
+            <li>
+              <a href="#our-engagement" class="flex">
+                <i class="material-icons">menu_book</i>
+                <span>Our Engagement</span>
+              </a>
+            </li>
+            <li>
+              <a href="#sustainability" class="flex">
+                <i class="material-icons">compost</i>
+                <span>Sustainability</span>
+              </a>
+            </li>
+            <li>
+              <a href="#timeline" class="flex">
+                <i class="material-icons">timeline</i>
+                <span>Timeline</span>
+              </a>
+            </li>
+            <li>
+              <a href="#party" class="flex">
+                <i class="material-icons">groups</i>
+                <span>Meet The Party</span>
+              </a>
+            </li>
+            <li>
+              <a href="#accommodations" class="flex">
+                <i class="material-icons">hotel</i>
+                <span>Accommodations</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="invite-section">
+      <div class="invite">
+        <div class="section container flex invite-text">
+          <div>
+            <h1 class="text-3xl center">SAVE THE DATE</h1>
+            <h2 class="text-lg center">FOR THE WEDDING OF</h2>
+          </div>
+          <div>
+            <h1 class="text-4xl center">MOLLY FISHER</h1>
+            <h1 class="text-4xl center">&amp;</h1>
+            <h1 class="text-4xl center">PHILIP HABIB</h1>
+          </div>
+          <div>
+            <p class="center">-</p>
+            <h3 class="text-2xl center">July 15, 2023</h3>
+            <p class="center">-</p>
+          </div>
+          <button class="rsvp-button text-lg" id="rsvp-button">
+            Save The Date
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <section id="our-engagement" class="our-story">
+      <div class="section container">
+        <h1 class="text-4xl center mb">Our Engagement</h1>
+        <center>
+          <div>
+            <video controls class="aspect-video video">
+              <source src="/imgs/engagement_vid.mp4" type="video/mp4" />
+              No HTML Video :(
+            </video>
+          </div>
+        </center>
+      </div>
+    </section>
+
+    <div class="parallax-container">
+      <div class="parallax img-1"></div>
+    </div>
+
+    <section id="sustainability" class="sustainability">
+      <div class="section container">
+        <h1 class="text-4xl center">Sustainability</h1>
+        <h2 class="text-xl mb center">AS IT RELATES TO THE</h2>
+
+        <div class="sustain-cards">
+          <div class="card sustain-card">
+            <div class="sustain-card__img">
+              <img src="/imgs/sustainability/molly.webp" alt="" />
+            </div>
+            <div class="sustain-card__text">
+              <h2 class="text-xl center">Bride</h2>
+            </div>
+            <div class="description">
+              Molly's wedding dress is pre-loved from
+              <a
+                target="_blank"
+                href="https://www.facebook.com/KnotTooShabbyBridal/"
+              >
+                Knot Too Shabby
+              </a>
+              in Stratford, ON.
+              <!-- Jennie carries a nice selection of dresses for
+              everyone and offers beautiful consignment dresses. -->
+            </div>
+          </div>
+
+          <div class="card sustain-card">
+            <div class="sustain-card__img">
+              <img src="/imgs/sustainability/bridesmaids.webp" alt="" />
+            </div>
+            <div class="sustain-card__text">
+              <h2 class="text-xl center">Bridesmaids</h2>
+            </div>
+            <div class="description">
+              The bridesmaids have been working diligently to thrift their
+              dresses, wear what they have or borrow from a friend! You'll
+              notice they are all different, but uniquely their own :)
+            </div>
+          </div>
+
+          <div class="card sustain-card">
+            <div class="sustain-card__img">
+              <img src="/imgs/sustainability/groomsmen.webp" alt="" />
+            </div>
+            <div class="sustain-card__text">
+              <h2 class="text-xl center">Groomsmen</h2>
+            </div>
+            <div class="description">
+              The groomsmen are renting their suits or wearing what they already
+              own.
+            </div>
+          </div>
+
+          <div class="card sustain-card">
+            <div class="sustain-card__img">
+              <img
+                src="/imgs/sustainability/engagement_ring.webp"
+                alt="Engagement ring in a white rose"
+              />
+            </div>
+            <div class="sustain-card__text">
+              <h2 class="text-xl center">Rings</h2>
+            </div>
+            <div class="description">
+              Our engagement ring and wedding bands come from Poags Jewelers in
+              Strathroy, who provide ethically sourced, Canadian-made diamonds.
+            </div>
+          </div>
+
+          <div class="card sustain-card">
+            <div class="sustain-card__img">
+              <img
+                src="/imgs/sustainability/ivey.webp"
+                alt="Ivey Spencer Leadership Center"
+              />
+            </div>
+            <div class="sustain-card__text">
+              <h2 class="text-xl center">Venue</h2>
+            </div>
+            <div class="description">
+              We found a venue with accommodations to prevent extra travelling
+              during the wedding day.
+              <ul>
+                <li>
+                  We encourage you to park at Ivey Spencer prior to the wedding
+                  ceremony and take a 10 minute walk down Windermere Rd. to the
+                  chapel and back.
+                </li>
+                <li>
+                  We are working with the venue to take the compost with us
+                  after the celebrations (since London is one of the last major
+                  cities that does not yet have a public compost program).
+                </li>
+                <li>
+                  We chose a buffet style dinner so you can just take the food
+                  you will actually eat and hopefully prevent half your plate
+                  from being tossed.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card sustain-card">
+            <div class="sustain-card__img">
+              <img src="/imgs/sustainability/registry.webp" alt="No registry" />
+            </div>
+            <div class="sustain-card__text">
+              <h2 class="text-xl center">Lack of Registry</h2>
+            </div>
+            <div class="description">
+              We are asking for no gifts, please. We are hoping to start our
+              marriage with minimal "stuff" and since we have never lived
+              together before, we don't know what we need yet! If you feel
+              compelled to give us something, money would be greatly appreciated
+              and we guarantee it will be put to good use for something we will
+              need and use in our new home.
+            </div>
+          </div>
+        </div>
+        <!-- Sustain Cards -->
+      </div>
+    </section>
+
+    <div class="parallax-container">
+      <div class="parallax img-2"></div>
+    </div>
+
+    <section id="timeline" class="section">
+      <h1 class="text-4xl mb center">Timeline</h1>
+      <div class="timeline container">
+        <div class="timeline-event">
+          <div class="timeline-content card">
+            <div class="card__content">
+              <h2 class="text-2xl">Mass</h2>
+              <p>
+                Please consider parking at Ivey Spencer Leadership Centre and
+                walking to the Church (about a 5-10 minute walk). There will be
+                plenty of time to walk back following Mass and before the
+                reception.
+              </p>
+            </div>
+            <div class="card__deets">
+              <i class="material-icons">location_on</i>
+              <a
+                href="https://g.page/Revera-Windermere-London?share"
+                target="_blank"
+                class="blue-text"
+              >
+                Christ the King University Parish
+              </a>
+              <i class="material-icons">schedule</i>
+              <span>2pm</span>
+            </div>
+          </div>
+          <div class="timeline-badge"></div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-content card">
+            <div class="card__content">
+              <h2 class="text-2xl">Check-in</h2>
+              <p>
+                Following Mass, you will have time to check-in and settle into
+                your room. Take this opportunity to change into your good
+                dancing shoes :) This is the time we will be taking photos with
+                our families and bridal party.
+              </p>
+            </div>
+            <div class="card__deets">
+              <i class="material-icons">location_on</i>
+              <a
+                href="https://goo.gl/maps/JA4KNg5YJegsn1Bi8"
+                target="_blank"
+                class="blue-text"
+              >
+                Ivey Spencer Leadership Centre
+              </a>
+              <i class="material-icons">schedule</i>
+              <span>4pm</span>
+            </div>
+          </div>
+          <div class="timeline-badge"></div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-content card">
+            <div class="card__content">
+              <h2 class="text-2xl">Reception</h2>
+              <p>
+                Please meet outside Ivey Spencer at the Big White Tent to find
+                your seat. Sign our guest book, snap some photos, and introduce
+                yourself to someone new
+              </p>
+            </div>
+            <div class="card__deets">
+              <i class="material-icons">location_on</i>
+              <span> Ivey Spencer Leadership Centre </span>
+              <i class="material-icons">schedule</i>
+              <span>6pm</span>
+            </div>
+          </div>
+          <div class="timeline-badge"></div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-content card">
+            <div class="card__content">
+              <h2 class="text-2xl">Dinner</h2>
+              <p>
+                Dinner will be buffet style. It just so happens that buffets are
+                one of Philip's top love languages. Please remember our priority
+                of sustainability. Take what you know you will eat and go back
+                for seconds if you know you can have more. We would love to save
+                on food-waste.
+              </p>
+            </div>
+            <div class="card__deets">
+              <i class="material-icons">location_on</i>
+              <span> Ivey Spencer Leadership Centre </span>
+              <i class="material-icons">schedule</i>
+              <span>6:30pm</span>
+            </div>
+          </div>
+          <div class="timeline-badge"></div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-content card">
+            <div class="card__content">
+              <h2 class="text-2xl">Speeches &amp; Toasts</h2>
+              <p>
+                One of Molly's top love languages is "words of affirmation" so
+                you can bet that we are looking forward to hearing fun stories
+                from our family and friends.
+              </p>
+            </div>
+            <div class="card__deets">
+              <i class="material-icons">location_on</i>
+              <span> Ivey Spencer Leadership Centre </span>
+              <i class="material-icons">schedule</i>
+              <span>7:30pm</span>
+            </div>
+          </div>
+          <div class="timeline-badge"></div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-content card">
+            <div class="card__content">
+              <h2 class="text-2xl">Dance</h2>
+              <p>
+                Get ready to tear up the dance floor and have a fun night with
+                us! This is what we have been waiting for!
+              </p>
+            </div>
+            <div class="card__deets">
+              <i class="material-icons">location_on</i>
+              <span> Ivey Spencer Leadership Centre </span>
+              <i class="material-icons">schedule</i>
+              <span>8:30pm - Midnight</span>
+            </div>
+          </div>
+          <div class="timeline-badge"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="parallax-container">
+      <div class="parallax img-3"></div>
+    </div>
+
+    <section id="party" class="meet">
+      <div class="container section">
+        <h1 class="text-4xl center mb">Meet The Party</h1>
+
+        <div class="bios mb">
+          <div class="bio flex">
+            <div class="polaroid card">
+              <img src="/imgs/party/danielle.webp" alt="Danielle Pic" />
+              <div class="polaroid__text">
+                <div class="polaroid__name">Danielle Durand</div>
+                <div class="polaroid__role">Maid of Honour</div>
+              </div>
+            </div>
+            <p class="bio-description">
+              Danielle has been my friend for seven years, and we continue to
+              grow closer every year that passes. Danielle is truly beautiful on
+              the inside and out, absolutely brilliant, selfless, strong, and a
+              genuinely caring friend. Our friendship started at King’s together
+              in CST, where we bonded over Shakespeare, Taylor Swift, and our
+              love for tea, and it has grown into an unbreakable bond. I am
+              grateful that we have been able to share every life milestone
+              together since we met from undergrad and masters graduations to
+              engagements, and now both of our marriages. Philip and I are
+              excited to grow in our marriage with Danielle and her wonderful
+              husband, Nathan, by our sides. I am so grateful that she has been
+              an active part of our relationship since our first date and will
+              continue to grow with us and adventure together (maybe even in
+              England again!)
+            </p>
+          </div>
+          <div class="bio flex">
+            <div class="polaroid card">
+              <img src="/imgs/party/marissa.webp" alt="Marissa Pic" />
+              <div class="polaroid__text">
+                <div class="polaroid__name">Marissa Lalli</div>
+                <div class="polaroid__role">Bridesmaid</div>
+              </div>
+            </div>
+            <p class="bio-description">
+              Marissa is my steadfast, lifelong chosen sister. We met in first
+              year residence at King’s and continued to live together at “The
+              Beehive” for 5 more years. Some of my absolute best memories from
+              University include (or are because of) Marissa; from late night
+              essays and studying, to spontaneous dance parties and attending
+              paint nights. She has a contagious laugh, and brings a positive
+              attitude into every interaction. If you want a snapshot of our
+              friendship, our birthday posts on Facebook are a pretty good
+              example &lt;3 Marissa is such a loving person who truly puts her
+              family first and never misses an opportunity to express her love
+              for her friends in creative ways. I’m so grateful that she has
+              been with me through many ups and downs and an especially key
+              player in my relationship with Philip since our very first date
+              (ending on her birthday!)
+            </p>
+          </div>
+          <div class="bio flex">
+            <div class="polaroid card">
+              <img src="/imgs/party/katie.webp" alt="Katie Pic" />
+              <div class="polaroid__text">
+                <div class="polaroid__name">Katie Donovan Panchaud</div>
+                <div class="polaroid__role">Bridesmaid</div>
+              </div>
+            </div>
+            <p class="bio-description">
+              Katie is a free-spirit, a spontaneous, (sometimes) reckless, yet
+              brave adventure buddy, a brilliant photographer, a great
+              conversationalist, and has a truly genuine, beautiful soul. We
+              only really became close in 2019, but it was an instant bond for
+              life. Through the “Catholic Weasels,” Rick McGhie, spontaneous
+              road trips to waterfalls or Port Stanley beach in the winter, and
+              deep life chats, we formed a fast friendship only continue to grow
+              and mature, no matter how much time passes between seeing each
+              other (like Katie moving more than 2700km up North for a year).
+              Katie is also the artist behind Philip and my engagement photos
+              &lt;3 I am so grateful that she is such a solid friend. I think we
+              can add “journey together through both ministry and toward
+              marriage” to our “Katie & Molly adventure bucket list” and check
+              it off soon.
+            </p>
+          </div>
+          <div class="bio flex">
+            <div class="polaroid card">
+              <img src="/imgs/party/beth.webp" alt="Beth Pic" />
+              <div class="polaroid__text">
+                <div class="polaroid__name">Beth Reitzel</div>
+                <div class="polaroid__role">Bridesmaid</div>
+              </div>
+            </div>
+            <p class="bio-description">
+              Beth is my kindred spirit. We met in September of 2019 on a King’s
+              retreat, and started to slowly get to know each other until
+              December when our friendship was welded together like steel at
+              RiseUp in Toronto (the same conference where I met my future
+              husband). Beth is such a kind, thoughtful, introspective,
+              intuitive, and patient person. She has genuine care for all her
+              friends, family, and chosen sisters, is an incredible
+              communicator, and someone I am so excited to journey through life
+              with. She has been present in our relationship from before Philip
+              and I started dating (and knew both of us separately before we
+              even met!) I am so grateful that Beth is a constant in my life and
+              that we get to journey toward the Sacrament of Marriage at the
+              same time while supporting each other every step of the way!
+            </p>
+          </div>
+        </div>
+        <!-- BIOS-->
+
+        <div class="bios">
+          <div class="bio flex">
+            <div class="polaroid card">
+              <img src="/imgs/party/sean.webp" alt="Sean Pic" />
+              <div class="polaroid__text">
+                <div class="polaroid__name">Sean Belford</div>
+                <div class="polaroid__role">Best Man</div>
+              </div>
+            </div>
+            <p class="bio-description">
+              Sean has been my best friend now for more than 8 years; we met in
+              grade 9 through a mutual friend and became really close while
+              studying at McMaster University - I guess living with a guy for 3
+              years will do that. While he was not there the night that Molly
+              and I hit it off, he was the first person I wanted to tell! Sean
+              and I have been through many stages of life together and I could
+              not be happier to have him witness my marriage.
+            </p>
+          </div>
+          <div class="bio flex">
+            <div class="polaroid card">
+              <img src="/imgs/party/nathan.webp" alt="Nathan Pic" />
+              <div class="polaroid__text">
+                <div class="polaroid__name">Nathan Durand</div>
+                <div class="polaroid__role">Groomsman</div>
+              </div>
+            </div>
+            <p class="bio-description">
+              I met Nathan during my first date with Molly in January of 2020. I
+              knew rather quickly that we'd get along really well, but I could
+              not have guessed that only 2 years later I'd be getting down on
+              one knee to ask him to be a groomsmen (with a RingPop!) I know
+              that he, and his beautiful wife Danielle, will continue to be a
+              very significant part of our lives as Molly and I journey into
+              marriage.
+            </p>
+          </div>
+          <div class="bio flex">
+            <div class="polaroid card">
+              <img src="/imgs/party/jack.webp" alt="Jack Pic" />
+              <div class="polaroid__text">
+                <div class="polaroid__name">Jack Fisher</div>
+                <div class="polaroid__role">Groomsman</div>
+              </div>
+            </div>
+            <p class="bio-description">
+              Before I met Molly's family on our third date she told me that
+              there were two people I needed to impress: her mom and her brother
+              Jack. I knew from the stories Molly and I had shared that Jack was
+              a very important part of her life and would therefore become a
+              very important part of my life. Jack and I have shared some cool
+              moments together. I am excited to get to get to know him better as
+              we transition into brotherhood.
+            </p>
+          </div>
+          <div class="bio flex">
+            <div class="polaroid card">
+              <img src="/imgs/party/anthony.webp" alt="Anthony Pic" />
+              <div class="polaroid__text">
+                <div class="polaroid__name">Anthony Habib</div>
+                <div class="polaroid__role">Groomsman</div>
+              </div>
+            </div>
+            <p class="bio-description">
+              Anthony is my younger, yet taller and stronger than me, brother. I
+              think we both agree that while we were always pretty close,
+              2018/2019 were the years that our friendship truly blossomed. I am
+              blessed to have a brother that is attentive, honest, and freaking
+              hilarious! We have been growing closer every passing year, and I’m
+              excited to have you be a part of the next chapter of my life in
+              such a special way.
+            </p>
+          </div>
+        </div>
+        <!-- BIOS-->
+      </div>
+    </section>
+
+    <div class="parallax-container">
+      <div class="parallax img-4"></div>
+    </div>
+
+    <section id="accommodations" class="accomodations">
+      <div class="container section">
+        <h1 class="text-4xl mb center">Accommodations</h1>
+        <p class="mb">
+          For all our out-of-town guests, we are happy to share that there are
+          accommodations available at the reception venue, Ivey Spencer
+          Leadership Centre. When you book your stay for Saturday night, please
+          use our wedding discount code. Located away from public areas, all 125
+          guestrooms feature our “Inspiring Beds” - guaranteed to ensure a
+          restful night's sleep. With parkland views and warm and comfortable
+          surroundings, our guestrooms provide relaxation, peace and privacy.
+        </p>
+        <p>Amenities include:</p>
+        <ul class="mb">
+          <li>Complimentary wireless internet</li>
+          <li>Individual coffee makers</li>
+          <li>Mini fridge in each room</li>
+          <li>Flat screen televisions</li>
+          <li>Iron and ironing board</li>
+        </ul>
+        <p class="mb">
+          <a
+            target="_blank"
+            href="https://book.passkey.com/go/fisherandhabibwedding"
+            >Book Here</a
+          >
+        </p>
+        <p class="mb">
+          If you need accommodation for more than the one night on Saturday,
+          please see the
+          <a target="_blank" href="https://guesthouseonthemount.ca/"
+            >Guesthouse on the Mount</a
+          >
+          for more booking just a short walk away!
+        </p>
+      </div>
+    </section>
+
+    <footer class="flex">
+      <a href="#">
+        <img class="logo" src="/imgs/mollip.svg" alt="MP" />
+      </a>
+      <p>&copy; Copyright 2022-2023 Molly and Philip</p>
+    </footer>
+  </body>
+</html>
