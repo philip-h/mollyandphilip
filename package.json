@@ -1,0 +1,9 @@
+{
+  "name": "mollyandphilip",
+  "version": "1.0.0",
+  "description": "Our wedsite 2023",
+  "main": "app.js",
+  "repository": "git@github.com:philip-h/mollyandphilip.git",
+  "author": "Philip Habib <philip.habib6347@gmail.com>",
+  "license": "MIT"
+}
