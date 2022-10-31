@@ -171,6 +171,11 @@
       media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
     />
 
+    <meta property="og:image" content="https://mollyandphilip.netlify.app/imgs/og_image.webp">
+    <meta property="og:description" content="Wedding website for Molly and Philip 2023" />
+    <meta property="og:url"content="https://mollyandphilip.netlify.app" />
+    <meta property="og:title" content="Molly & Philip" />
+
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="manifest" href="manifest.json" />
 
@@ -782,9 +787,7 @@
     </footer>
 
     <script>
-      console.log(navigator);
       if ("serviceWorker" in navigator) {
-        console.log("service worker registered...");
         navigator.serviceWorker.register("/serviceworker.js");
       }
     </script>
