@@ -432,8 +432,13 @@ nav {
   transform: translateY(100%);
 }
 
+
 .sustain-card:hover .description {
   transform: translateY(0%);
+}
+
+.sustain-card .description ul {
+  padding-left: 1rem;
 }
 
 .sustain-card__text {
@@ -447,6 +452,7 @@ nav {
 .sustain-card__img {
   max-width: 350px;
 }
+
 
 @media (max-width: 768px) {
   .sustain-cards {
