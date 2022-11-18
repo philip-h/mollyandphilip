@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @font-face {
   font-family: "Special Elite";
   src: url("/font/special-elite.regular.ttf");
@@ -20,7 +27,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,6 +106,8 @@ img {
 }
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: var(--gap, 1rem);
 }
@@ -144,7 +154,8 @@ img {
 }
 
 .card {
-  box-shadow: var(--card-shadow);
+  -webkit-box-shadow: var(--card-shadow);
+          box-shadow: var(--card-shadow);
   border-radius: 2px;
 }
 
@@ -155,9 +166,13 @@ img {
 .card__deets {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   padding: 1rem 1rem 1rem 1rem;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 24px 0.5rem 1fr;
   grid-template-columns: 24px 1fr;
-  column-gap: 0.5rem;
+  -webkit-column-gap: 0.5rem;
+     -moz-column-gap: 0.5rem;
+          column-gap: 0.5rem;
   place-items: center start;
 }
 
@@ -180,8 +195,12 @@ nav {
 
 .header > .container {
   height: 100%;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .navbar {
@@ -193,7 +212,9 @@ nav {
 
 .navbar > li {
   height: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar > li > .mobile-logo {
@@ -206,8 +227,12 @@ nav {
 
 .navbar > li > a {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 1rem;
   color: inherit;
 }
@@ -232,11 +257,22 @@ nav {
     z-index: 1000;
     inset: 0 0 0 30%;
     background: hsl(0 0% 100% / 0.75);
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: min(15vh, 5rem) 2rem;
 
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+
+        -ms-transform: translateX(100%);
+
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 350ms ease-out;
+    transition: -webkit-transform 350ms ease-out;
+    -o-transition: transform 350ms ease-out;
     transition: transform 350ms ease-out;
+    transition: transform 350ms ease-out, -webkit-transform 350ms ease-out;
   }
 
   .navbar > li {
@@ -274,15 +310,23 @@ nav {
     top: 8px;
     right: 1rem;
     z-index: 9999;
+    -webkit-transition: background 350ms ease-out;
+    -o-transition: background 350ms ease-out;
     transition: background 350ms ease-out;
   }
 
   .mobile-nav-toggle__fab {
     background-color: var(--purple);
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
@@ -290,12 +334,15 @@ nav {
   }
 
   .navbar[data-visible="true"] {
-    transform: translate(0%);
+    -webkit-transform: translate(0%);
+        -ms-transform: translate(0%);
+            transform: translate(0%);
   }
-  @supports (backdrop-filter: blur(1rem)) {
+  @supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
     .navbar {
       background: hsl(0 0% 100% / 0.1);
-      backdrop-filter: blur(1rem);
+      -webkit-backdrop-filter: blur(1rem);
+              backdrop-filter: blur(1rem);
     }
   }
 
@@ -353,7 +400,8 @@ nav {
     background-image: url(/imgs/wedding-card-bg.webp);
     max-width: 600px;
     margin: 0 auto;
-    box-shadow: var(--card-shadow);
+    -webkit-box-shadow: var(--card-shadow);
+            box-shadow: var(--card-shadow);
     aspect-ratio: 1;
   }
 
@@ -368,7 +416,10 @@ nav {
 
 .invite > .section {
   --gap: 3rem;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .rsvp-button {
@@ -377,22 +428,28 @@ nav {
   cursor: pointer;
 
   font-family: "Special Elite", serif;
+  color: black !important;
 
   width: 100%;
   padding: 0.75rem 1rem;
   background-color: var(--blue);
 
   border-radius: 2px;
-  box-shadow: var(--card-shadow);
+  -webkit-box-shadow: var(--card-shadow);
+          box-shadow: var(--card-shadow);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .rsvp-button:hover {
-  box-shadow: var(--card-shadow-hover);
+  -webkit-box-shadow: var(--card-shadow-hover);
+          box-shadow: var(--card-shadow-hover);
 }
 
 .rsvp-button:active {
-  box-shadow: var(--card-shadow);
+  -webkit-box-shadow: var(--card-shadow);
+          box-shadow: var(--card-shadow);
 }
 
 /* OUR STORY */
@@ -403,15 +460,22 @@ nav {
 /*SUSTAINABILITY */
 
 .sustain-cards {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 1rem;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
   row-gap: 2rem;
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 @media (max-width: 768px) {
   .sustain-cards {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
@@ -428,13 +492,19 @@ nav {
   position: absolute;
   /* overflow-y: scroll; */
   inset: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
 }
 
 
 .sustain-card:hover .description {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
 }
 
 .sustain-card .description ul {
@@ -456,7 +526,10 @@ nav {
 
 @media (max-width: 768px) {
   .sustain-cards {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 /* TIMELINE */
@@ -543,22 +616,36 @@ i.material-icons {
 
 /* BIOS */
 .bios {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr 1rem 1fr;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 1rem;
-  align-items: start;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 @media (max-width: 768px) {
   .bios {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
 
 .bio {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .polaroid {
@@ -580,8 +667,12 @@ i.material-icons {
 
 footer {
   padding: 2rem;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: var(--purple);
   /* color: white; */
 }
