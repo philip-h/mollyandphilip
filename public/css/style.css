@@ -249,7 +249,7 @@ nav {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .navbar {
     --gap: 3rem;
 
@@ -353,18 +353,23 @@ nav {
 
 /* PARALLAX SECTION SEPARATORS */
 .parallax-container {
-  position: relative;
-  overflow: hidden;
   height: 500px;
+  width: 100%;
 }
 
 .parallax-container .parallax {
-  height: 100vh;
-  width: 100vw;
+  height: 500px;
+  width: 100%;
   background-size: cover;
   background-position-x: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
+}
+
+@media (min-width: 796px) {
+  .parallax-container .parallax {
+    background-attachment: fixed;
+  }
 }
 
 .parallax.img-1 {
