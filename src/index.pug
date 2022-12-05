@@ -33,3 +33,9 @@ body
             include _partials/mollip.svg
         
         p &copy; Copyright 2022-2023 Molly and Philip
+    
+    //- Register Service Worker
+    script.
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/serviceworker.js");
+      }
