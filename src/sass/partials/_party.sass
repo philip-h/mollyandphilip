@@ -1,0 +1,24 @@
+@use 'vars'
+
+.bios
+    grid-template-columns: repeat(4, 1fr)
+    align-items: start
+
+
+    @media (max-width: vars.$tablet-bp)
+        grid-template-columns: repeat(2, 1fr)
+
+    @media (max-width: vars.$mobile-bp)
+        grid-template-columns: 1fr
+
+.bio
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.polariod
+    &__text
+        padding-top: 1rem
+    
+    &__role
+        font-size: 0.75rem

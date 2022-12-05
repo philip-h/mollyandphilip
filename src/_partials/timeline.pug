@@ -1,0 +1,66 @@
+section#timeline.section
+    h1.text-4xl.mb.center Timeline 
+    .timeline.container 
+        -
+            var timelineItems = [
+                {
+                    title: "Mass",
+                    description: "Our wedding begins at 2pm! Please consider parking at Ivey Spencer Leadership Centre and either carpooling down the road or walking to the Church (about a 10-20 minute walk). There will be plenty of time to walk back following Mass and before the reception.",
+                    where: "Christ the King University Parish",
+                    when: "2pm",
+                    location_url: "https://goo.gl/maps/JA4KNg5YJegsn1Bi8",
+                },
+                {
+
+                    title: "Check-in",
+                    description: "Please call Ivey Spencer in the morning to ask for an earlier check-in. Their standard time is 3pm, but they may make an exception for Wedding guests. Following Mass, you will have time to check-in and settle into your room. Take this opportunity to change into your good dancing shoes :) This is the time we will be taking photos with our families and bridal party.",
+                    where: "Ivey Spencer Leadership Centre",
+                    when: "3pm",
+                    location_url: "https://goo.gl/maps/JA4KNg5YJegsn1Bi8",
+                },
+                {
+                    title: "Free Time",
+                    description: "While we take our photos, you are welcome to walk downstairs for coffee, tea, and social time in the Parish hall, head back to your room at Ivey Spencer, or hang out in the Garden Room at Ivey (with a cash bar and pool table) until dinner.",
+                    where: "London, Ontario",
+                    when: "3:30pm",
+                },
+                {
+                    title: "Reception",
+                    description: "The rest of the evening will be held in Asher's Dining Room. Find your table and get ready for dinner and dancing! The Garden Room (where we will be dancing) will open at 4pm with a cash bar until dinner.",
+                    where: "Ivey Spencer Leadership Center",
+                    when: "6pm",
+                },
+                {
+                    title: "Dinner",
+                    description: "Dinner will be buffet style. It just so happens that buffets are one of Philip's top love languages. Please remember our priority of sustainability. Start with a small plate and take what you know you will eat, then go back for seconds if you know you can have more. We would love to save on food-waste.",
+                    where: "Ivey Spencer Leadership Center",
+                    when: "6:30pm",
+                },
+                {
+                    title: "Speeches & Toasts",
+                    description: "One of Molly's top love languages is \"words of affirmation\" so you can bet that we are looking forward to hearing fun stories from our family and friends. Shoutout to Jack and Crystal for being our MCs for the evening.",
+                    where: "Ivey Spencer Leadership Center",
+                    when: "7:30pm",
+                },
+                {
+                    title: "Dance",
+                    description: "Get ready to tear up the dance floor and have a fun night with us! This is what we have been waiting for!",
+                    where: "Ivey Spencer Leadership Center",
+                    when: "8:30pm - Midnight",
+                },
+            ]
+        each timelineItem in timelineItems 
+            .timeline-event 
+                .timeline-content.card 
+                    .card__content 
+                        h2.text-2xl= timelineItem.title
+                        p!= timelineItem.description
+                    .card__deets 
+                        i.material-icons location_on
+                        if timelineItem.location_url 
+                            a.blue-text(href=timelineItem.location_url target="_blank")= timelineItem.where
+                        else
+                            span= timelineItem.where
+                        i.material-icons schedule
+                        span= timelineItem.when
+                .timeline-badge

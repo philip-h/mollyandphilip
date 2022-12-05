@@ -1,0 +1,114 @@
+@use 'vars'
+
+.container
+    margin: 0 auto
+    max-width: 1280px
+    width: 95%
+
+    @media (min-width: 601px)
+        width: 85%
+    
+    // @media (min-width: 993px)
+    //     width: 70%
+
+.section
+    padding: 2rem 0
+
+.mb
+    margin-bottom: 2rem
+
+.flex
+    display: flex
+    gap: 1rem
+
+.grid
+    display: grid
+    gap: 1rem
+
+.sr-only 
+    position: absolute
+    width: 1px
+    height: 1px
+    padding: 0
+    margin: -1px
+    overflow: hidden
+    clip: rect(0, 0, 0, 0)
+    white-space: nowrap
+    border: 0
+
+.center
+    text-align: center
+
+.text-lg
+    font-size: 1.125rem
+    line-height: 1.75rem
+
+.text-xl
+    font-size: 1.25rem
+    line-height: 1.85rem
+
+.text-2xl
+    font-size: 1.25rem
+    line-height: 2rem
+
+
+.text-3xl
+    font-size: 1.875rem
+    line-height: 2.25rem
+
+.text-4xl
+    font-size: 2.25rem
+    line-height: 2.5rem
+
+.card
+    box-shadow: vars.$box_shadow
+    border-radius: 2px
+    padding: 1rem
+    background-color: white
+
+    &__content
+        padding: 1rem
+    
+    &__deets
+        border-top: 1px solid rgba(160, 160, 160, 0.2)
+        padding: 1rem 1rem 1rem 1rem
+        display: grid
+        grid-template-columns: 24px 1fr
+        column-gap: 0.5rem
+        place-items: center start
+
+hr
+    width: 150%
+    border: none
+    border-top: 1px solid rgba(160, 160, 160, 0.2)
+
+.sensible-video
+    aspect-ratio: 16 / 9
+    width: 100%
+
+.gallery-separator
+    height: 500px
+    width: 100%
+
+    .gallery-image
+        height: 500px
+        width: 100%
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        background-attachment: scroll
+
+        @media (min-width: vars.$mobile-bp)
+            background-attachment: fixed
+        
+        &.img-1
+            background-image: url(/imgs/mollip_knee.webp)
+        
+        &.img-2
+            background-image: url(/imgs/mollip_pickup.webp)
+
+        &.img-3
+            background-image: url(/imgs/mollip_cute.webp)
+
+        &.img-4
+            background-image: url(/imgs/mollip_back.webp)

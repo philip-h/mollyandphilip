@@ -1,0 +1,23 @@
+header.header: .container.flex 
+    div
+        a(href="#")
+            include mollip.svg
+
+    button.mobile-nav-toggle(aria-controls="navbar" aria-expanded="false")
+        span.sr-only Menu
+    
+    nav: ul#navbar.navbar.flex(data-visible="false")
+        li: a.mobile-logo(href="#")
+            include mollip.svg
+        -
+            var navItems = [
+                { name: "Engagement", icon: "menu_book", slug: "engagement" },
+                { name: "Sustainability", icon: "compost", slug: "sustainability" },
+                { name: "Timeline", icon: "timeline", slug: "timeline" },
+                { name: "The Party", icon: "groups", slug: "party" },
+                { name: "Accommodations", icon: "hotel", slug: "accommodations" },
+            ]
+        each navItem in navItems
+            li: a.flex(href=`#${navItem.slug}`) 
+                i.material-icons= navItem.icon
+                span= navItem.name

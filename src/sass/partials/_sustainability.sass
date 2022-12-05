@@ -1,0 +1,27 @@
+@use 'vars'
+
+.sustain-cards
+    width: 100%
+    grid-template-columns: repeat(3, 1fr)
+    place-items: center
+
+    @media (max-width: vars.$tablet-bp)
+        grid-template-columns: repeat(2, 1fr)
+
+    @media (max-width: vars.$mobile-bp)
+        grid-template-columns: 1fr
+
+    .sustain-card
+        overflow-y: hidden
+        position: relative 
+
+        .description
+            padding: 1rem
+            background-color: white
+            position: absolute
+            inset: 0
+            transition: all 0.3s ease-in-out
+            transform: translateY(100%)
+    
+        &:hover .description
+            transform: translateY(0%)

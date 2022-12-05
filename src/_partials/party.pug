@@ -1,0 +1,75 @@
+section#party.party
+    .container.section 
+        h1.text-4xl.center.mb Meet The Party
+        -
+            var partyPeople = [
+                [
+                    { 
+                        name: 'Danielle Durand',
+                        role: 'Maid of Honour',
+                        img: 'danielle.webp',
+                        description: "Danielle has been my friend for seven years, and we continue to grow closer every year that passes. Danielle is truly beautiful on the inside and out, absolutely brilliant, selfless, strong, and a genuinely caring friend. Our friendship started at King's together in CST, where we bonded over Shakespeare, Taylor Swift, and our love for tea, and it has grown into an unbreakable bond. I am grateful that we have been able to share every life milestone together since we met from undergrad and masters graduations to engagements, and now both of our marriages. Philip and I are excited to grow in our marriage with Danielle and her wonderful husband, Nathan, by our sides. I am so grateful that she has been an active part of our relationship since our first date and will continue to grow with us and adventure together (maybe even in England again!)",
+                    },
+                    { 
+                        name: 'Marissa Lalli',
+                        role: 'Bridesmaid',
+                        img: 'marissa.webp',
+                        description: "Marissa is my steadfast, lifelong chosen sister. We met in first year residence at King's and continued to live together at \"The Beehive\" for 5 more years. Some of my absolute best memories from University include (or are because of) Marissa; from late night essays and studying, to spontaneous dance parties and attending paint nights. She has a contagious laugh, and brings a positive attitude into every interaction. If you want a snapshot of our friendship, our birthday posts on Facebook are a pretty good example &lt;3 Marissa is such a loving person who truly puts her family first and never misses an opportunity to express her love for her friends in creative ways. I'm so grateful that she has been with me through many ups and downs and an especially key player in my relationship with Philip since our very first date (ending on her birthday!)",
+                    },
+                    { 
+                        name: 'Katie Donovan Panchaud',
+                        role: 'Bridesmaid',
+                        img: 'katie.webp',
+                        description: "Katie is a free-spirit, a spontaneous, (sometimes) reckless, yet brave adventure buddy, a brilliant photographer, a great conversationalist, and has a truly genuine, beautiful soul. Our friendship began in 2019 and we instantly bonded. Through the “Catholic Weasels,” Rick McGhie, spontaneous road trips to waterfalls or Port Stanley beach in the winter, and deep life chats, we formed a fast friendship that continues to grow and mature, no matter how much time passes between seeing each other (like Katie moving more than 2700km up North for a year). Katie is also the artist behind our engagement photos and the video above &lt;3 I am so grateful for our friendship and am excited to continue adding and checking adventures off our \"Katie & Molly adventure bucket list\"!",
+                        k: true
+                    },
+                    { 
+                        name: 'Elizabeth Reitzel',
+                        role: 'Bridesmaid',
+                        img: 'beth.webp',
+                        description: "Beth and I met in September of 2019 on a King's Campus Ministry retreat, and became friends as we worked togehter until December when our friendship was welded together like steel at RiseUp in Toronto (the same conference where I met Philip). Beth is such a kind, thoughtful, introspective, intuitive, and patient person. She has genuine care for all her friends, family, and chosen sisters, is an incredible communicator, and someone I am so excited to journey through life with. She has been present in our relationship from before Philip and I started dating (and knew both of us separately before we even met)! We lived together at the beginning of 2022 and shared many deep life chats. I am excited that we get to journey toward the Sacrament of Marriage at the same time while supporting each other every step of the way!",
+                    },
+                ],
+                [
+                    { 
+                        name: 'Sean Belford',
+                        role: 'Best Man',
+                        img: 'sean.webp',
+                        description: "Sean has been my best friend now for more than 8 years; we met in grade 9 through a mutual friend and became really close while studying at McMaster University - I guess living with a guy for 3 years will do that. While he was not there the night that Molly and I hit it off, he was the first person I wanted to tell! Sean and I have been through many stages of life together and I could not be happier to have him witness my marriage.",
+                    },
+                    { 
+                        name: 'Nathan Durand',
+                        role: 'Groomsmen',
+                        img: 'nathan.webp',
+                        description: "I met Nathan during my first date with Molly in January of 2020. I knew rather quickly that we'd get along really well, but I could not have guessed that only 2 years later I'd be getting down on one knee to ask him to be a groomsmen (with a RingPop!) I know that he, and his beautiful wife Danielle, will continue to be a very significant part of our lives as Molly and I journey into marriage.",
+                    },
+                    { 
+                        name: 'Jack Fisher',
+                        role: 'Groomsmen',
+                        img: 'jack.webp',
+                        description: "Before I met Molly's family on our third date she told me that there were two people I needed to impress: her mom and her brother Jack. I knew from the stories Molly and I had shared that Jack was a very important part of her life and would therefore become a very important part of my life. Jack and I have shared some cool moments together. I am excited to get to get to know him better as we transition into brotherhood.",
+                    },
+                    { 
+                        name: 'Anthony Habib',
+                        role: 'Groomsmen',
+                        img: 'anthony.webp',
+                        description: "Anthony is my younger, yet taller and stronger-than-me, brother. I think we both agree that while we were always pretty close, 2018/2019 were the years that our friendship truly blossomed. I am blessed to have a brother that is attentive, honest, and freaking hilarious! We have been growing closer every passing year, and I'm excited to have you be a part of the next chapter of my life in such a special way.",
+                    },
+                ]
+            ]
+
+        each i in [0, 1] 
+            .grid.bios.mb
+                each partyPerson in partyPeople[i]
+                    .flex.bio 
+                        .card.polariod 
+                            img(src="/imgs/party/" + partyPerson.img alt=partyPeople.name + " pic")     
+                            .polariod__text.center 
+                                if partyPerson.k
+                                    .polariod__name(style="font-size: 0.9rem")= partyPerson.name 
+                                else
+                                    .polariod__name= partyPerson.name 
+                                .polariod__role= partyPerson.role
+                        p.bio-description!= partyPerson.description
+        
+    

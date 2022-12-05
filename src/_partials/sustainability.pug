@@ -1,0 +1,43 @@
+section#sustainability.sustainability
+    .section.container 
+        h1.text-4xl.center Sustainability
+        h2.text-xl.center.mb As it relates to the:
+    
+        .grid.sustain-cards
+            -
+                var sustainItems = [
+                    { 
+                        img: "bridal_party.webp",
+                        alt: "Bridal Party",
+                        description: "Molly and bridesmaids have been working diligently to thrift their dresses, wear what they have or borrow from a friend! You'll notice they are all different, but uniquely their own.",
+                    },
+                    {
+                        img: "groomsmen.webp",
+                        alt: "Groomsmen",
+                        description: "The groomsmen are renting their suits or wearing what they already own.",
+                    },
+                    {
+                        img: "guests.webp",
+                        alt: "Guests",
+                        description: "Please do not buy anything new for our wedding; this includes clothing, gifts, accessories, etc. We encourage you to please check your local thrift store or borrow from a friend. We are trying our darndest not to buy into the fast fashion industry, but it needs to be a collective effort. We appreciate your environmentally conscious actions.",
+                    },
+                    {
+                        img: "rings.webp",
+                        alt: "Rings",
+                        description: "Our engagement ring and wedding bands come from Poags Jewelers in Strathroy. Poags Jewelers are committed to selling precious metals and gemstones that have been mined and manufactured in harmony with the environment. For years, Poags have demanded both personal and written warranties from all of their diamond suppliers that diamonds delivered to them have been purchased through legitimate \"conflict free\" sources. A written warranty is required for every individual diamond shipment.",
+                    },
+                    {
+                        img: "venue.webp",
+                        alt: "Venue",
+                        description: "Ivey Spencer is close to the Chapel at Windermere, which limits travel during the day. You are welcome to park at Ivey prior to the wedding ceremony and carpool to the Mass and back. Ivey offers composting options for our food scraps, and we are working with the kitchen to make limited food for our buffet. We chose a buffet style dinner so you can just take the food you will actually eat and prevent half your plate from being tossed.",
+                    },
+                    {
+                        img: "registry.webp",
+                        alt: "Registry",
+                        description: "We do not have an official registry since we have never lived together before, don't yet have a house, and don't know what we need yet! If you feel compelled to give us something, money would be greatly appreciated and we guarantee it will be put to good use for something we will need and use in our new home. We will let you know what we use your gift for.",
+                    },
+                ]
+            each sustainItem in sustainItems
+                .card.sustain-card
+                    .sustain-card__img: img(src="/imgs/sustainability/" + sustainItem.img alt=sustainItem.alt)
+                    .description= sustainItem.description

@@ -1,0 +1,47 @@
+@use 'vars'
+
+.invite-section
+    background-image: url(/imgs/mobile_bg.webp)
+    background-repeat: no-repeat
+    background-position: center top
+    background-size: cover 
+
+    @media (min-width: vars.$mobile-bp)
+        background-image: url(/imgs/bg.webp)
+
+
+    .invite-card
+        box-sizing: border-box
+        gap: 3rem 
+        flex-direction: column
+        padding: 4rem 0
+        background-repeat: no-repeat
+        background-position: center top
+        background-size: 100% auto
+        border-radius: 2px
+
+        @media (min-width: vars.$mobile-bp)
+            background-image: url(/imgs/wedding-card-bg.webp)
+            max-width: 600px
+            padding-left: 4rem
+            padding-right: 4rem
+            box-shadow: vars.$box-shadow
+
+.rsvp-button
+    display: block
+    border: 0
+    cursor: pointer
+
+    font-family: "Special Elite", sans-serif
+    color: black !important
+
+    width: 100%
+    padding: 0.75rem 1rem
+    background-color: vars.$blue
+    border-radius: 2px
+    box-shadow: vars.$box-shadow
+
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)
+
+    &:hover
+        box-shadow: vars.$box-shadow-hover

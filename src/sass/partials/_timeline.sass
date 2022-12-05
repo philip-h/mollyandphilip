@@ -1,0 +1,79 @@
+@use 'vars'
+
+.timeline
+    position: relative
+
+    .timeline-badge
+        display: block
+        position: absolute
+        width: 1rem
+        height: 1rem
+        background: vars.$purple
+        top: calc(50% - 0.5rem)
+        right: calc(50% - 0.5rem)
+        border-radius: 50%
+        text-align: center
+        cursor: default
+
+        i
+            font-size: 1.5rem
+            line-height: 2.5rem
+        
+        @media (max-width: vars.$tablet-bp)
+            left: 12px
+
+    .timeline-event
+        position: relative
+        padding-top: 0.5rem
+        padding-bottom: 0.5rem
+
+        &::before
+            display: block
+            content: ""
+            width: 2px
+            height: calc(50% - 2rem)
+            position: absolute
+            background: #d2d2d2
+            left: calc(50% - 1px)
+            top: 0
+
+            @media (max-width: vars.$tablet-bp)
+                left: 19px
+        
+        &::after
+            display: block
+            content: ""
+            width: 2px
+            height: calc(50% - 2rem)
+            position: absolute
+            background: #d2d2d2
+            left: calc(50% - 1px)
+            top: calc(50% + 2rem)
+
+            @media (max-width: vars.$tablet-bp)
+                left: 19px
+        
+        &:first-child::before, &:last-child::after
+            display: none
+        
+        &:nth-child(even)
+            .timeline-content
+                margin-left: calc(50% + 3rem)
+
+                @media (max-width: vars.$tablet-bp)
+                    margin-left: 3rem
+        
+        &:nth-child(odd)
+            .timeline-content
+                margin-left: 0
+
+                @media (max-width: vars.$tablet-bp)
+                    margin-left: 3rem
+
+        .timeline-content
+            position: relative
+            width: calc(50% - 3rem)
+
+            @media (max-width: vars.$tablet-bp)
+                // width: calc(100% - 3rem)
+                width: inherit
