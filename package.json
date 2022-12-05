@@ -6,7 +6,7 @@
   "author": "Philip Habib <philip.habib6347@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp build && workbox generateSW",
     "serve": "gulp"
   },
   "devDependencies": {
@@ -23,6 +23,7 @@
     "gulp-terser": "^2.1.0",
     "postcss": "^8.4.19",
     "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "workbox-cli": "^6.5.4"
   }
 }

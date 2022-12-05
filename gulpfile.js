@@ -131,7 +131,7 @@ function moveFavicon(cb) {
 }
 
 function movePwa(cb) {
-  src(['src/serviceworker.js', 'src/manifest.json'])
+  src('src/manifest.json')
     .pipe(dest(paths.public));
   cb();
 }
