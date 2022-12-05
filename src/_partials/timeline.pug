@@ -56,11 +56,11 @@ section#timeline.section
                         h2.text-2xl= timelineItem.title
                         p!= timelineItem.description
                     .card__deets 
-                        i.material-icons location_on
+                        img.icon(src="/imgs/icons/location_on.svg" alt="location ico")
                         if timelineItem.location_url 
                             a.blue-text(href=timelineItem.location_url target="_blank")= timelineItem.where
                         else
                             span= timelineItem.where
-                        i.material-icons schedule
+                        img.icon(src="/imgs/icons/schedule.svg" alt="schedule ico")
                         span= timelineItem.when
                 .timeline-badge

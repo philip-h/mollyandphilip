@@ -1,7 +1,7 @@
 /*global require*/
 "use strict";
 
-const { src, dest, watch, series, parallel } = require('gulp');
+const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
@@ -9,7 +9,7 @@ const terser = require('gulp-terser');
 const prefix = require('gulp-autoprefixer');
 const browsersync = require('browser-sync').create();
 const pug = require('gulp-pug');
-const autoprefixer = require('autoprefixer');
+const imagemin = require('gulp-imagemin');
 
 /*
  * Directories here
@@ -93,8 +93,21 @@ function jsTaskProd(cb){
   cb();
 }
 
+/**
+ * Move images for dev
+ */
 function moveImages(cb) {
   src(paths.images)
+    .pipe(dest(paths.imgout));
+  cb();
+}
+
+/**
+ * Compress images for prod
+ */
+function compressImages(cb) {
+  src('./src/imgs/**')
+    .pipe(imagemin())
     .pipe(dest(paths.imgout));
   cb();
 }
@@ -148,7 +161,7 @@ function watchTask(){
 }
 
 exports.build = series(
-  moveImages,
+  compressImages,
   moveIcons,
   moveFonts,
   moveFavicon,

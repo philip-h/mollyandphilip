@@ -1,23 +1,23 @@
 header.header: .container.flex 
     div
         a(href="#")
-            include mollip.svg
+            img.navicon(src="/imgs/icons/mollip.svg" alt="MP")
 
     button.mobile-nav-toggle(aria-controls="navbar" aria-expanded="false")
         span.sr-only Menu
     
     nav: ul#navbar.navbar.flex(data-visible="false")
         li: a.mobile-logo(href="#")
-            include mollip.svg
+            img.navicon(src="/imgs/icons/mollip.svg" alt="MP")
         -
             var navItems = [
-                { name: "Engagement", icon: "menu_book", slug: "engagement" },
-                { name: "Sustainability", icon: "compost", slug: "sustainability" },
-                { name: "Timeline", icon: "timeline", slug: "timeline" },
-                { name: "The Party", icon: "groups", slug: "party" },
-                { name: "Accommodations", icon: "hotel", slug: "accommodations" },
+                { name: "Engagement", icon: "/imgs/icons/diamond.svg", slug: "engagement" },
+                { name: "Sustainability", icon: "/imgs/icons/compost.svg", slug: "sustainability" },
+                { name: "Timeline", icon: "/imgs/icons/timeline.svg", slug: "timeline" },
+                { name: "The Party", icon: "/imgs/icons/groups.svg", slug: "party" },
+                { name: "Accommodations", icon: "/imgs/icons/hotel.svg", slug: "accommodations" },
             ]
         each navItem in navItems
             li: a.flex(href=`#${navItem.slug}`) 
-                i.material-icons= navItem.icon
+                img.icon(src=navItem.icon alt=navItem.slug + ' icon')
                 span= navItem.name

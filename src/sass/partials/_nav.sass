@@ -1,5 +1,9 @@
 @use 'vars'
 
+img.navicon
+    height: 32px
+    width: auto
+
 header
     background-color: white
     height: 1px
@@ -32,7 +36,7 @@ nav
             padding: 0 1rem
             color: inherit 
 
-            i
+            img.icon
                 display: none
 
 .mobile-nav-toggle
@@ -62,7 +66,7 @@ nav
                 &:hover
                     background-color: inherit
                 
-                i
+                img.icon
                     display: inline
         
         &[data-visible="true"]
@@ -81,7 +85,7 @@ nav
         position: fixed
         cursor: pointer 
         background-color: transparent
-        background-image: url(/imgs/menu_open.svg)
+        background-image: url(/imgs/icons/menu_open.svg)
         background-size: 2rem auto
         background-repeat: no-repeat
         background-position: center
@@ -101,5 +105,5 @@ nav
             justify-content: center
         
         &[aria-expanded="true"]
-            background-image: url(/imgs/menu_close.svg)
+            background-image: url(/imgs/icons/menu_close.svg)
             
