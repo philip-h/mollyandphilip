@@ -19,6 +19,7 @@ var paths = {
   pug: './src/index.pug',
   sass: './src/sass/main.sass',
   images: './src/imgs/**/*',
+  icons: './src/icons/**/*',
   font: './src/font/*',
   js: './src/js/script.js',
 
@@ -27,6 +28,7 @@ var paths = {
   css: './public/css',
   jsterse: './public/js',
   imgout: './public/imgs',
+  iconsout: './public/icons',
   fontout: './public/font'
 };
 
@@ -97,6 +99,12 @@ function moveImages(cb) {
   cb();
 }
 
+function moveIcons(cb) {
+  src(paths.icons)
+    .pipe(dest(paths.iconsout));
+  cb();
+}
+
 function moveFonts(cb) {
   src(paths.font)
     .pipe(dest(paths.fontout));
@@ -141,6 +149,7 @@ function watchTask(){
 
 exports.build = series(
   moveImages,
+  moveIcons,
   moveFonts,
   moveFavicon,
   movePwa,
@@ -153,6 +162,7 @@ exports.build = series(
 // Default Gulp Task
 exports.default = series(
   moveImages,
+  moveIcons,
   moveFonts,
   moveFavicon,
   movePwa,
