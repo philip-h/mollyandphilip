@@ -63,7 +63,7 @@ section#party.party
                 each partyPerson in partyPeople[i]
                     .flex.bio 
                         .card.polariod 
-                            img(src="/imgs/party/" + partyPerson.img alt=partyPeople.name + " pic")     
+                            img(src="/imgs/party/" + partyPerson.img alt=partyPerson.name + " pic")     
                             .polariod__text.center 
                                 if partyPerson.k
                                     .polariod__name(style="font-size: 0.9rem")= partyPerson.name 
