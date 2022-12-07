@@ -9,6 +9,7 @@ const terser = require('gulp-terser');
 const prefix = require('gulp-autoprefixer');
 const browsersync = require('browser-sync').create();
 const pug = require('gulp-pug');
+const urlBuilder = require('gulp-url-builder')
 const imagemin = require('gulp-imagemin');
 
 /*
@@ -16,8 +17,8 @@ const imagemin = require('gulp-imagemin');
  */
 var paths = {
   // Input Directories
-  pug: './src/index.pug',
-  sass: './src/sass/main.sass',
+  pug: './src/pages/*.pug',
+  sass: './src/sass/*.sass',
   images: './src/imgs/**/*',
   icons: './src/icons/**/*',
   font: './src/font/*',
@@ -38,6 +39,7 @@ var paths = {
 function pugTask(cb) {
   src(paths.pug)
     .pipe(pug())
+    .pipe(urlBuilder())
     .pipe(dest(paths.public));
   
   cb();
