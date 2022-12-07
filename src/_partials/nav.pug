@@ -1,14 +1,14 @@
 header.header: .container.flex 
     div
         a(href="#")
-            img.navicon(src="/imgs/icons/mollip.svg" alt="MP")
+            img.navicon(src="/imgs/icons/mollip.svg" alt="MP" width="71" height="32")
 
     button.mobile-nav-toggle(aria-controls="navbar" aria-expanded="false")
         span.sr-only Menu
     
     nav: ul#navbar.navbar.flex(data-visible="false")
         li: a.mobile-logo(href="#")
-            img.navicon(src="/imgs/icons/mollip.svg" alt="MP")
+            img.navicon(src="/imgs/icons/mollip.svg" alt="MP" width="71" height="32")
         -
             var navItems = [
                 { name: "Engagement", icon: "/imgs/icons/diamond.svg", slug: "engagement" },
@@ -19,5 +19,5 @@ header.header: .container.flex
             ]
         each navItem in navItems
             li: a.flex(href=`#${navItem.slug}`) 
-                img.icon(src=navItem.icon alt=navItem.slug + ' icon')
+                img.icon(src=navItem.icon alt=navItem.slug+' icon' width="16" height="16")
                 span= navItem.name

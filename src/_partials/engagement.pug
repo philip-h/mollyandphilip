@@ -1,4 +1,13 @@
 section#engagement
     .section.container
         h1.text-4xl.center.mb Our Engagement
-        iframe.sensible-video(src="https://www.youtube.com/embed/gRVUs0FwaZc" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen)
+        div.sensible-video
+            iframe.fill-parent(
+                loading="lazy"
+                srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;}</style><a href=https://www.youtube.com/embed/gRVUs0FwaZc?autoplay=1><img src=https://img.youtube.com/vi/gRVUs0FwaZc/maxresdefault.jpg alt='Our engagement'><span>▶</span></a>"
+                src="https://www.youtube.com/embed/gRVUs0FwaZc" 
+                title="Our engagement" 
+                frameborder="0" 
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" 
+                allowfullscreen
+            )
