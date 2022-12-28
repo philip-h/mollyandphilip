@@ -8,13 +8,13 @@ section#party.party
                         name: 'Danielle Durand',
                         role: 'Maid of Honour',
                         img: 'danielle.webp',
-                        description: "Danielle has been my friend for seven years, and we continue to grow closer every year that passes. Danielle is truly beautiful on the inside and out, absolutely brilliant, selfless, strong, and a genuinely caring friend. Our friendship started at King's together in CST, where we bonded over Shakespeare, Taylor Swift, and our love for tea, and it has grown into an unbreakable bond. I am grateful that we have been able to share every life milestone together since we met from undergrad and masters graduations to engagements, and now both of our marriages. Philip and I are excited to grow in our marriage with Danielle and her wonderful husband, Nathan, by our sides. I am so grateful that she has been an active part of our relationship since our first date and will continue to grow with us and adventure together (maybe even in England again!)",
+                        description: "Danielle has been my friend for seven years, and we continue to grow closer every year that passes. Danielle is truly beautiful on the inside and out, absolutely brilliant, selfless, strong, and a genuinely caring friend. Our friendship started at King's together in CST, where we bonded over Shakespeare, Taylor Swift, and our love for tea, and it has grown into an unbreakable bond. I am grateful that we have been able to share every life milestone together since we met from undergrad and masters graduations to engagements, and now both of our marriages. Philip and I are excited to grow in our marriage with Danielle and her wonderful husband, Nathan, by our sides. I am so grateful that she has been an active part of our relationship since our first date and will continue to grow with us and adventure together (maybe even in England again)!",
                     },
                     { 
                         name: 'Marissa Lalli',
                         role: 'Bridesmaid',
                         img: 'marissa.webp',
-                        description: "Marissa is my steadfast, lifelong chosen sister. We met in first year residence at King's and continued to live together at \"The Beehive\" for 5 more years. Some of my absolute best memories from University include (or are because of) Marissa; from late night essays and studying, to spontaneous dance parties and attending paint nights. She has a contagious laugh, and brings a positive attitude into every interaction. If you want a snapshot of our friendship, our birthday posts on Facebook are a pretty good example &lt;3 Marissa is such a loving person who truly puts her family first and never misses an opportunity to express her love for her friends in creative ways. I'm so grateful that she has been with me through many ups and downs and an especially key player in my relationship with Philip since our very first date (ending on her birthday!)",
+                        description: "Marissa is my steadfast, lifelong chosen sister. We met in first year residence at King's and continued to live together at \"The Beehive\" for 5 more years. Some of my absolute best memories from University include (or are because of) Marissa; from late night essays and studying, to spontaneous dance parties and attending paint nights. She has a contagious laugh, and brings a positive attitude into every interaction. If you want a snapshot of our friendship, our birthday posts on Facebook are a pretty good example &lt;3 Marissa is such a loving person who truly puts her family first and never misses an opportunity to express her love for her friends in creative ways. I'm so grateful that she has been with me through many ups and downs and an especially key player in my relationship with Philip since our very first date (ending on her birthday)!",
                     },
                     { 
                         name: 'Katie Donovan Panchaud',
@@ -27,7 +27,7 @@ section#party.party
                         name: 'Elizabeth Reitzel',
                         role: 'Bridesmaid',
                         img: 'beth.webp',
-                        description: "Beth and I met in September of 2019 on a King's Campus Ministry retreat, and became friends as we worked togehter until December when our friendship was welded together like steel at RiseUp in Toronto (the same conference where I met Philip). Beth is such a kind, thoughtful, introspective, intuitive, and patient person. She has genuine care for all her friends, family, and chosen sisters, is an incredible communicator, and someone I am so excited to journey through life with. She has been present in our relationship from before Philip and I started dating (and knew both of us separately before we even met)! We lived together at the beginning of 2022 and shared many deep life chats. I am excited that we get to journey toward the Sacrament of Marriage at the same time while supporting each other every step of the way!",
+                        description: "Beth and I met in September of 2019 on a King's Campus Ministry retreat, and became friends as we worked together until December when our friendship was welded together like steel at RiseUp in Toronto (the same conference where I met Philip). Beth is such a kind, thoughtful, introspective, intuitive, and patient person. She has genuine care for all her friends, family, and chosen sisters, is an incredible communicator, and someone I am so excited to journey through life with. She has been present in our relationship from before Philip and I started dating (and knew both of us separately before we even met)! We lived together at the beginning of 2022 and shared many deep life chats. I am excited that we get to journey toward the Sacrament of Marriage at the same time while supporting each other every step of the way!",
                     },
                 ],
                 [
@@ -53,7 +53,7 @@ section#party.party
                         name: 'Anthony Habib',
                         role: 'Groomsmen',
                         img: 'anthony.webp',
-                        description: "Anthony is my younger, yet taller and stronger-than-me, brother. I think we both agree that while we were always pretty close, 2018/2019 were the years that our friendship truly blossomed. I am blessed to have a brother that is attentive, honest, and freaking hilarious! We have been growing closer every passing year, and I'm excited to have you be a part of the next chapter of my life in such a special way.",
+                        description: "Anthony is my younger, yet taller and stronger-than-me, brother. I think we both agree that while we were always pretty close, 2018/2019 were the years that our friendship truly blossomed. I am blessed to have a brother that is attentive, honest, and freaking hilarious! We have been growing closer every passing year, and I'm excited to have him be a part of the next chapter of my life in such a special way.",
                     },
                 ]
             ]
@@ -63,7 +63,7 @@ section#party.party
                 each partyPerson in partyPeople[i]
                     .flex.bio 
                         .card.polariod 
-                            img(src="/imgs/party/" + partyPerson.img alt=partyPerson.name + " pic" width="400" height="400")     
+                            img(src="/imgs/party/" + partyPerson.img alt=partyPerson.name width="400" height="400")     
                             .polariod__text.center 
                                 if partyPerson.k
                                     .polariod__name(style="font-size: 0.9rem")= partyPerson.name 
