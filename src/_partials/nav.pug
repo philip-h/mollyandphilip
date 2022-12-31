@@ -1,6 +1,6 @@
 header.header: .container.flex 
     div
-        a(href="#")
+        a(href="/#")
             img.navicon(src="/imgs/icons/mollip.svg" alt="MP" width="71" height="32")
 
     button.mobile-nav-toggle(aria-controls="navbar" aria-expanded="false")
@@ -18,6 +18,6 @@ header.header: .container.flex
                 { name: "Accommodations", icon: "/imgs/icons/hotel.svg", slug: "accommodations" },
             ]
         each navItem in navItems
-            li: a.flex(href=`#${navItem.slug}`) 
+            li: a.flex(href=`/#${navItem.slug}`) 
                 img.icon(src=navItem.icon alt=navItem.slug+' icon' width="16" height="16")
                 span= navItem.name
