@@ -22,7 +22,7 @@ var paths = {
   images: './src/imgs/**/*',
   icons: './src/icons/**/*',
   font: './src/font/*',
-  js: './src/js/script.js',
+  js: './src/js/*',
 
   // Output Directories
   public: './public',

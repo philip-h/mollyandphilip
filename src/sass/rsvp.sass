@@ -1,3 +1,111 @@
 @use 'partials/reset'
 @use 'partials/utilities'
-@use 'partials/invite'
+@use 'partials/vars'
+@use 'partials/nav'
+
+@font-face 
+    font-family: "Special Elite"
+    src: url(/font/special-elite.regular.ttf)
+    font-display: swap
+
+body
+    font-family: "Special Elite", serif
+
+input
+    font: inherit
+
+.rsvp-main
+    // height: 100vh
+    flex-direction: column
+    align-items: center
+
+.mollip-rsvp
+    width: 60%
+    margin: 5rem 0
+
+.check-email-container,
+.rsvp-form-container
+    width: 80%
+    margin: 0 auto
+
+.rsvp-form-container
+    opacity: 0
+    transition: opacity 0.2s ease-in
+
+.form-item
+    position: relative
+
+    &__input
+        padding: 0.7rem 1rem
+        border: 1px solid #999
+        border-radius: 0.25rem
+        position: relative
+        display: block
+        width: 100%
+        resize: vertical
+
+        &:hover
+            border-color: #666
+
+        &:focus
+            border-color: #333
+            outline: #333
+    
+    &__label
+        position: absolute
+        pointer-events: none
+        top: 0.8rem
+        left: 1rem
+        padding: 0 0.25rem
+        background-color: white
+        transition: all 0.15s ease-in-out
+        color: #999
+    
+    &__error
+        color: #cc0000
+        font-size: 0.9rem
+        opacity: 0
+    
+    &__submit
+        width: 100%
+        background-color: vars.$blue-bg
+        padding: 0.5rem 0
+        outline: none
+        border: 1px solid vars.$blue-bg
+        border-radius: 2px
+        cursor: pointer
+        box-shadow: vars.$box-shadow 
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+        
+        &:hover:not(:disabled)
+            box-shadow: vars.$box-shadow-hover
+        &:focus:not(:disabled)
+            box-shadow: vars.$box-shadow-hover
+        &:active:not(:disabled)
+            box-shadow: none
+        &:disabled
+            background-color: #999
+            border-color: #999
+            cursor: auto
+
+// Animate the label to the top left of the input when:
+// Label is in focus
+.form-item__input:focus ~ .form-item__label,
+// There is text in the input
+.form-item__input:not(:placeholder-shown).form-item__input:not(:focus) ~ .form-item__label
+    top: -0.5rem
+    font-size: 0.75rem
+    color: #333
+
+#rsvp-form
+    fieldset
+        width: 100%
+        margin: 0
+        border-radius: 2px
+    textarea
+        min-height: 100px
+    #rsvp-button
+        margin-top: 1rem
+
+.opacity-1
+    opacity: 1

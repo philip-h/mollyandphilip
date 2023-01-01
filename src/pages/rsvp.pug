@@ -2,11 +2,39 @@ doctype html
 html(lang="en")
     head 
         include ../_partials/head
-        title RSVP
+        //- My scripts
+        script(src="/js/main.js" defer)
+        script(src="/js/rsvp.js" defer)
+
+        //- My CSS
+        link(rel="stylesheet" href="/css/rsvp.css")
+
+        title Molly &amp; Philip 2023 | RSVP
     
-    bode
+    body
         include ../_partials/nav
-        main.invite-section.section
-            .container.flex.invite-card
-                form(action="#")
-                    input(type="text")
+        main.rsvp-main.flex
+            img.mollip-rsvp(src="/imgs/icons/mollip.svg", alt="MP")
+            .check-email-container
+                form#email-form
+                    .form-item 
+                        input#email_in.form-item__input(type="email", placeholder="")
+                        label.form-item__label(for="email_in") Email 
+                        span.form-item__error * Email Address not found
+                    .form-item
+                        input#checkEmailButton.form-item__submit(type="submit", value="Check Email")
+            
+            .rsvp-form-container 
+                form#rsvp-form
+                    fieldset#rsvp-fieldset
+                        legend RSVP
+                    .form-item 
+                        textarea#songreq.form-item__input(name="songreq", placeholder="")
+                        label.form-item__label(for="songreq") Song Requests...
+                    
+                    .form-item 
+                        input#rsvp-button.form-item__submit(type="submit", value="RSVP")
+
+
+
+        

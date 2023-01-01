@@ -3,6 +3,14 @@ doctype html
 html(lang="en")
     head
         include ../_partials/head
+
+        //- My scripts
+        script(src="/js/main.js" defer)
+
+        //- My CSS
+        link(rel="stylesheet" href="/css/main.css")
+
+        title Molly &amp; Philip 2023
         
     body
         include ../_partials/nav
@@ -36,7 +44,7 @@ html(lang="en")
             p &copy; Copyright 2022-2023 Molly and Philip
         
         //- Register Service Worker
-        script.
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("/sw.js");
-            }
+        //- script.
+        //-     if ("serviceWorker" in navigator) {
+        //-         navigator.serviceWorker.register("/sw.js");
+        //-     }
