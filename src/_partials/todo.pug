@@ -1,0 +1,91 @@
+section#todo.todo
+    .container.section
+        h1.text-4xl.center.mb Things Todo
+        p.mb.
+            If coffee/tea in the Parish hall don't interest you and
+            you are done checking into your room, here are some other suggestions
+            of things to do between the ceremony and reception so you
+            can get to know the City of London (Distance in km from Ivey 
+            Spencer Leadership Centre included)
+        
+        ul.mb 
+            -
+                var places = [
+                    { 
+                        name: "The Grotto behind the Mount (where Molly and Philip got engaged) (1.1km)",
+                    },
+                    {
+                        name: "Masonville Mall (2.3km) (Open 10am - 8pm)",
+                        href: "https://shops.cadillacfairview.com/property/cf-masonville-place"
+                    },
+                    {
+                        name: "King's University College (2.8km)",
+                        href: "https://www.kings.uwo.ca/ "
+                    },
+                    {
+                        name: "Western University McIntosh Gallery (3.2km) (Open 12pm - 4pm)",
+                        href: "https://www.uwo.ca/"
+                    },
+                    {
+                        name: "Medway Valley Heritage Trail (where Molly and Philip took their engagement photos in March right before they were engaged) (3.3km)",
+                        href: "https://www.alltrails.com/trail/canada/ontario/medway-forest-trail"
+                    },
+                    {
+                        name: "Thames Valley Trailhead (behind St. Peter's Seminary) (3.6km)",
+                    },
+                    {
+                        name: "Gibbons Park (3.9km) (Open 24hrs)",
+                        href: "https://london.ca/parks-london"
+                    },
+                    {
+                        name: "St. Peter's Cathedral Basilica (4.8km) (Open 4:30pm - 6:30pm)",
+                        href: "https://www.cathedral.dol.ca/"
+                    },
+                    {
+                        name: "Victoria Park (4.8km) (10am - 10pm)",
+                        href: "https://london.ca/living-london/parks-facilities"
+                    },
+                    {
+                        name: "Banting House National Historic Site (birthplace of Insulin) (5.4km) (Open 11am - 4pm)",
+                        href: "https://bantinghousenhs.ca/"
+                    },
+                    {
+                        name: "Eldon House (5.5km) (Open 12pm - 5pm)",
+                        href: "https://eldonhouse.ca/"
+                    },
+                    {
+                        name: "Fleetway (bowling and laser tag) (5.6km) (Open 10am - 1am)",
+                        href: "https://fleetwayfun.com/"
+                    },
+                    {
+                        name: "Covent Garden Market (5.7km) (open 8am - 6pm)",
+                        href: "https://coventmarket.com/"
+                    },
+                    {
+                        name: "Museum London (5.7km) (Open 11am - 5pm)",
+                        href: "http://museumlondon.ca/"
+                    },
+                    {
+                        name: "Museum of Ontario Archeology (5.7km) (Open 10am - 4pm)",
+                        href: "https://archaeologymuseum.ca/"
+                    },
+                    { 
+                        name: "Springbank Park (8.3km) (Open 24hrs)",
+                        href: "https://www.ontariossouthwest.com/listing/springbank-park/1768/"
+                    },
+                    {
+                        name: "Storybook Gardens (11.7km)",
+                        href: "https://www.storybook.london.ca/"
+                    },
+                    {
+                        name: "Fanshawe Pioneer Village (12.4km)",
+                        href: "https://www.fanshawepioneervillage.ca/"
+                    }
+                ]
+            each place in places
+                li
+                    if place.href
+                        a(href=place.href)= place.name
+                    else
+                        span= place.name
+            

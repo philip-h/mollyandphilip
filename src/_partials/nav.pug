@@ -1,6 +1,6 @@
 header.header: .container.flex 
     div
-        a(href="#")
+        a(href="/#")
             img.navicon(src="/imgs/icons/mollip.svg" alt="MP" width="71" height="32")
 
     button.mobile-nav-toggle(aria-controls="navbar" aria-expanded="false")
@@ -16,8 +16,12 @@ header.header: .container.flex
                 { name: "Timeline", icon: "/imgs/icons/timeline.svg", slug: "timeline" },
                 { name: "The Party", icon: "/imgs/icons/groups.svg", slug: "party" },
                 { name: "Accommodations", icon: "/imgs/icons/hotel.svg", slug: "accommodations" },
+                { name: "Things To Do", icon: "/imgs/icons/explore.svg", slug: "todo" },
             ]
         each navItem in navItems
-            li: a.flex(href=`#${navItem.slug}`) 
+            li: a.flex(href=`/#${navItem.slug}`) 
                 img.icon(src=navItem.icon alt=navItem.slug+' icon' width="16" height="16")
                 span= navItem.name
+
+        li: a.flex(href="/rsvp/")
+            button.rsvp-button RSVP
