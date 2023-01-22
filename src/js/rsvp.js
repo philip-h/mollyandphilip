@@ -6,6 +6,7 @@ const emailCheckForm = document.querySelector(".check-email-container");
 const rsvpForm = document.querySelector(".rsvp-form-container");
 const rsvpFieldset = document.getElementById("rsvp-fieldset");
 const rsvpButton = document.getElementById("rsvp-button");
+const loadingSpinner = document.querySelector('.loading')
 
 // Prevent default from form
 document.getElementById("email-form")
@@ -37,6 +38,9 @@ function nameToCheckBox(fullName, rowId) {
 async function submitRSVPForm() {
   // Grab all of the relevant data
   const checkBoxContainers = Array.from(rsvpFieldset.children);
+  // Remove legend
+  checkBoxContainers.shift();
+  // Remove paragraph instructions
   checkBoxContainers.shift();
 
   // Create the JSON object to update
@@ -78,6 +82,7 @@ async function submitRSVPForm() {
 }
 
 async function displayAndPopulateRSVP(records) {
+  loadingSpinner.classList.remove('opacity-1')
   rsvpForm.style.display = "block";
   rsvpForm.classList.add("opacity-1");
   checkEmailButton.disabled = "true";
@@ -95,9 +100,12 @@ async function displayAndPopulateRSVP(records) {
 }
 
 async function checkEmail() {
+  loadingSpinner.classList.add('opacity-1')
   // Do nothing is email is invalid (blank or browser supported email validation)
-  if (!emailInput.validity.valid)
+  if (!emailInput.validity.valid){
+    loadingSpinner.classList.remove('opacity-1')
     return false
+  }
 
   const url = new URL("https://api.airtable.com/v0/appsit6FuUaYaimD1/GuessTheList")
   url.searchParams.append('filterByFormula', `{Email} = '${emailInput.value}'`)
@@ -105,12 +113,14 @@ async function checkEmail() {
   const response = await fetch(url, { headers: {'Authorization': 'Bearer key6D7xNIxuAPCWV6'}});
   if (!response.ok) {
     errorMessage.classList.add("opacity-1");
+    loadingSpinner.classList.remove('opacity-1')
     return false
   }
   const json = await response.json()
   const records = json.records;
   if (records.length == 0) {
     errorMessage.classList.add("opacity-1");
+    loadingSpinner.classList.remove('opacity-1')
     return false
   }
   errorMessage.classList.remove("opacity-1");

@@ -130,4 +130,29 @@ input
         margin-top: 1rem
 
 .opacity-1
-    opacity: 1
+    opacity: 1 !important
+
+.loading
+    height: 2rem
+    margin-top: 2rem
+    display: flex
+    justify-content: center
+    align-items: center
+    opacity: 0
+
+.loading::after
+    content: ""
+    height: 2rem
+    width: 2rem
+    border: 0.25rem solid white 
+    border-top-color: vars.$blue-bg
+    border-radius: 50%
+    background-color: white
+    animation: loading 0.75s ease infinite
+
+@keyframes loading
+    from
+        transform: rotate(0turn)
+    to
+        transform: rotate(1turn)
+    
