@@ -14,14 +14,35 @@ body
 input
     font: inherit
 
+.rsvp-bg
+    background-image: url(/imgs/bg.webp)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
 .rsvp-main
     // height: 100vh
     flex-direction: column
     align-items: center
+    max-width: 30rem
+    margin: 0 auto
+    border-radius: 0.25rem 
+    padding: 1rem
+    transition: border 0.2s ease-in
+    background-color: white
+
+    @media (min-width: vars.$tablet-bp)
+        margin-top: 5rem
+        margin-bottom: 2rem
+        padding-top: 5rem
+        padding-bottom: 5rem
+        border: 1px solid #DADCE0
+        box-shadow: vars.$box-shadow
 
 .mollip-rsvp
-    width: 60%
-    margin: 5rem 0
+    // width: 60%
+    // margin: 5rem 0
+    width: 48px
 
 .check-email-container,
 .rsvp-form-container
@@ -30,6 +51,7 @@ input
 
 .rsvp-form-container
     opacity: 0
+    display: none
     transition: opacity 0.2s ease-in
 
 .form-item

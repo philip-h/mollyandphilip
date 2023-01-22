@@ -11,8 +11,8 @@ const config = {
   trigger: "click",
   iCalFileName: "Mollip-Wedding",
 };
-const button = document.querySelector("#rsvp-button");
-button.addEventListener("click", () => atcb_action(config, button));
+// const button = document.querySelector("#rsvp-button");
+// button.addEventListener("click", () => atcb_action(config, button));
 
 const header = document.querySelector(".header");
 const navbar = document.querySelector(".navbar");
@@ -21,6 +21,7 @@ const navLinks = navbar.childNodes;
 
 // Expland and deflate side menu on nav-toggle click
 navToggle.addEventListener("click", (e) => {
+  console.log("Clicked")
   const visibility = navbar.getAttribute("data-visible");
   if (visibility === "false") {
     navbar.setAttribute("data-visible", true);

@@ -11,14 +11,17 @@ html(lang="en")
 
         title Molly &amp; Philip 2023 | RSVP
     
-    body
+    body.rsvp-bg
         include ../_partials/nav
         main.rsvp-main.flex
             img.mollip-rsvp(src="/imgs/icons/mollip.svg", alt="MP")
+            h1.text-4xl.mb RSVP
+            p.text-2xl.center.mb.
+                Please input your email address in the box below, then press the blue button
             .check-email-container
                 form#email-form
                     .form-item 
-                        input#email_in.form-item__input(type="email", placeholder="")
+                        input#email_in.form-item__input(type="email", placeholder="", required)
                         label.form-item__label(for="email_in") Email 
                         span.form-item__error * Email Address not found
                     .form-item
@@ -28,6 +31,10 @@ html(lang="en")
                 form#rsvp-form
                     fieldset#rsvp-fieldset
                         legend RSVP
+                        p.mb.
+                            Please check the names of the people who will be attending 
+                            our wedding on April 22, 2023. Enter any song requests in 
+                            the box below and press the blue button to confirm your attendance.
                     .form-item 
                         textarea#songreq.form-item__input(name="songreq", placeholder="")
                         label.form-item__label(for="songreq") Song Requests...
