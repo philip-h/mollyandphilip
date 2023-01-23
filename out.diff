@@ -1,0 +1,128 @@
+diff --git a/src/js/rsvp.js b/src/js/rsvp.js
+index 64b283f..86c4102 100644
+--- a/src/js/rsvp.js
++++ b/src/js/rsvp.js
+@@ -18,38 +18,73 @@ document.getElementById("rsvp-form")
+ 
+ function nameToCheckBox(fullName, rowId) {
+   const fullNameSlug = fullName.replace(/ /g,'');
+-  const checkBox = document.createElement('input');
+-  checkBox.type="checkbox";
+-  checkBox.name="rsvp-names";
+-  checkBox.id=fullNameSlug;
+-  checkBox.value=rowId
+ 
+-  const label = document.createElement('label');
+-  label.htmlFor = fullNameSlug;
+-  label.innerText = fullName;
++  const nameSpan = document.createElement('span')
++  nameSpan.innerText = fullName+ ":";
++  nameSpan.style.marginRight = "1rem";
++
++  const checkBoxContainer = document.createElement('div');
++
++  const checkBoxYes = document.createElement('input');
++  checkBoxYes.type="radio";
++  checkBoxYes.name=`rsvp-${fullNameSlug}`;
++  checkBoxYes.id=fullNameSlug+"Yes";
++  checkBoxYes.value=rowId
++  
++  const checkBoxNo = document.createElement('input');
++  checkBoxNo.type="radio";
++  checkBoxNo.name=`rsvp-${fullNameSlug}`;
++  checkBoxNo.id=fullNameSlug+"No";
++  checkBoxNo.value=rowId
++
++  const labelYes = document.createElement('label');
++  labelYes.htmlFor = fullNameSlug+"Yes";
++  labelYes.innerText = "Yes";
++
++  const labelNo = document.createElement('label');
++  labelNo.htmlFor = fullNameSlug+"No";
++  labelNo.innerText = "No";
++
++  checkBoxContainer.append(checkBoxYes);
++  checkBoxContainer.append(labelYes);
++  checkBoxContainer.append(checkBoxNo);
++  checkBoxContainer.append(labelNo);
+ 
+   const container = document.createElement('div');
+-  container.appendChild(checkBox);
+-  container.appendChild(label);
++  container.style.display = "flex";
++  container.style.justifyContent = "space-between";
++  container.append(nameSpan);
++  container.append(checkBoxContainer);
+ 
+   return container;
+ }
+ 
+ async function submitRSVPForm() {
+   // Grab all of the relevant data
+-  const checkBoxContainers = Array.from(rsvpFieldset.children);
++  const rsvpYesNoContainer = Array.from(rsvpFieldset.children);
+   // Remove legend
+-  checkBoxContainers.shift();
++  rsvpYesNoContainer.shift();
+   // Remove paragraph instructions
+-  checkBoxContainers.shift();
++  rsvpYesNoContainer.shift();
+ 
+   // Create the JSON object to update
+   const records = []
+-  checkBoxContainers.forEach(checkBoxContainer => {
+-    const elements = Array.from(checkBoxContainer.children);
+-    const canCome = elements[0].checked ? 'Yes' : 'No';
++  rsvpYesNoContainer.forEach(containerElementNodeList => {
++    const containerElementArr = Array.from(containerElementNodeList.children);
++    const yesNoDiv = containerElementArr.pop();
++    const [yesRadio, , noRadio, ] = Array.from(yesNoDiv.children);
++    let canCome = '';
++    if (yesRadio.checked) {
++      canCome = 'Yes';
++    } else if (noRadio.checked) {
++      canCome = 'No';
++    } else {
++      canCome = 'LeftBlank';
++    }
++
++
+     const record = { 
+-      id: elements[0].value,
++      id: yesRadio.value,
+       fields: {
+         "RSVPStatus": canCome,
+         "SongRequest": document.getElementById("songreq").value
+@@ -60,7 +95,6 @@ async function submitRSVPForm() {
+ 
+   const data = {records};
+   const url = new URL("https://api.airtable.com/v0/appsit6FuUaYaimD1/GuessTheList")
+-  console.log(JSON.stringify(data));
+   const response = await fetch(url, { 
+     headers: {
+       'Authorization': 'Bearer key6D7xNIxuAPCWV6',
+@@ -72,7 +106,6 @@ async function submitRSVPForm() {
+     });
+ 
+     if (!response.ok){
+-      alert("Error");
+       console.log(response);
+       return
+     }
+@@ -86,7 +119,6 @@ async function displayAndPopulateRSVP(records) {
+   rsvpForm.style.display = "block";
+   rsvpForm.classList.add("opacity-1");
+   checkEmailButton.disabled = "true";
+-  console.log(records);
+ 
+   records.forEach(record => {
+     const fields = record.fields;
+@@ -108,7 +140,7 @@ async function checkEmail() {
+   }
+ 
+   const url = new URL("https://api.airtable.com/v0/appsit6FuUaYaimD1/GuessTheList")
+-  url.searchParams.append('filterByFormula', `{Email} = '${emailInput.value}'`)
++  url.searchParams.append('filterByFormula', `LOWER({Email}) = '${emailInput.value.toLowerCase()}'`)
+   
+   const response = await fetch(url, { headers: {'Authorization': 'Bearer key6D7xNIxuAPCWV6'}});
+   if (!response.ok) {
